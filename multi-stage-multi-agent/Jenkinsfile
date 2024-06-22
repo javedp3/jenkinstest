@@ -27,7 +27,7 @@ pipeline {
     }
     stage('database') {
       agent {
-        docker { image 'mongo:8.0.0-rc9-nanoserver'  }
+        docker { image 'mongo:8.0.0-rc9-jammy'  }
       }
       steps {
         sh 'mongo --version'
