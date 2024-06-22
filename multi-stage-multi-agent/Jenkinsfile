@@ -41,12 +41,20 @@ pipeline {
         sh 'mysql --version'
       }
     }
-stage('data platform for caching') {
+    stage('data platform for caching') {
       agent {
         docker { image 'redis:7.4-rc1-alpine3.20'  }
       }
       steps {
         sh 'redis --version'
+      }
+    }
+    stage('go imperative programming language') {
+      agent {
+        docker { image 'golang:1.23rc1-bullseye'  }
+      }
+      steps {
+        sh 'golang --version'
       }
     }
 
