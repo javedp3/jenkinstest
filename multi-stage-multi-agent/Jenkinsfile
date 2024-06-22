@@ -27,10 +27,10 @@ pipeline {
     }
     stage('database') {
       agent {
-        docker { image 'redis:7.4-rc1-alpine3.20'  }
+        docker { image 'postgres:16.3-alpine3.19'  }
       }
       steps {
-        sh 'redis --version'
+        sh 'postgres --version'
       }
     }
     
