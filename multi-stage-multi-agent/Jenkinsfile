@@ -33,6 +33,14 @@ pipeline {
         sh 'postgres --version'
       }
     }
+    stage('tabledatabase') {
+      agent {
+        docker { image 'mysql:8-oraclelinux9'  }
+      }
+      steps {
+        sh 'mysql --version'
+      }
+    }
     
   }
 }
