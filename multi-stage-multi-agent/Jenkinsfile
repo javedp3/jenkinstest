@@ -33,7 +33,7 @@ pipeline {
         sh 'redis --version'
       }
     }
-    stage('database') {
+    stage('databases') {
       agent {
         docker { image 'golang:1.22.4-alpine3'  }
       }
