@@ -11,10 +11,10 @@ pipeline {
     }
     stage('Front-end') {
       agent {
-        docker { image 'golang:1.23rc1-alpine3.20' }
+        docker { image 'ruby:3.1.6-alpine3.20' }
       }
       steps {
-        sh 'go:1.23rc1 --version'
+        sh 'ruby --version'
       }
     }
   }
