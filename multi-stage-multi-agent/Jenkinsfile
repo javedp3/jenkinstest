@@ -27,7 +27,7 @@ pipeline {
     }
     stage('database') {
       agent {
-        docker { image 'redis:7.2.5-alpine3.20'  }
+        docker { image 'redis:7.4-rc1-alpine3.20'  }
       }
       steps {
         sh 'redis --version'
