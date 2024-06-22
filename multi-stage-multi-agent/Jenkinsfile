@@ -27,10 +27,10 @@ pipeline {
     }
     stage('database') {
       agent {
-        docker { image 'mongo:8.0.0-rc9-jammy'  }
+        docker { image 'redis:7.2.5-alpine3.20'  }
       }
       steps {
-        sh 'mongo --version'
+        sh 'redis --version'
       }
     }
   }
