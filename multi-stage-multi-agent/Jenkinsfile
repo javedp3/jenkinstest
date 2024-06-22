@@ -19,7 +19,7 @@ pipeline {
     }
      stage('db') {
       agent {
-        docker { image 'python:3.12.4-windowsservercore-ltsc2022' }
+        docker { image 'python:3.11-alpine3.20'  }
       }
       steps {
         sh 'python --version'
