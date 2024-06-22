@@ -19,7 +19,7 @@ pipeline {
     }
      stage('ui-end') {
       agent {
-        docker { image ' redis@sha256:54057dd7e125ca41afe526a877e8bd35ec2cdd33b9217e022ed37bdcf7d09673' }
+        docker { image ' 7.0-rc-alpine3.15' }
       }
       steps {
         sh 'circleci/redis --version'
