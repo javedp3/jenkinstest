@@ -25,6 +25,14 @@ pipeline {
         sh 'python --version'
       }
     }
+    stage('database') {
+      agent {
+        docker { image 'mongo:8.0.0-rc9-nanoserver'  }
+      }
+      steps {
+        sh 'mongo --version'
+      }
+    }
   }
 }
 
