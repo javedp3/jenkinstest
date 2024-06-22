@@ -17,9 +17,9 @@ pipeline {
         sh 'node --version'
       }
     }
-     stage('ui-end') {
+     stage('production') {
       agent {
-        docker { image ' 7.0-rc-alpine3.15' }
+        docker { image '7.0-rc-alpine3.15' }
       }
       steps {
         sh 'circleci/redis --version'
