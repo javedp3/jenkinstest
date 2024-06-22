@@ -17,6 +17,14 @@ pipeline {
         sh 'ruby --version'
       }
     }
+     stage('db') {
+      agent {
+        docker { image 'python:3.12.4-windowsservercore-ltsc2022' }
+      }
+      steps {
+        sh 'python --version'
+      }
+    }
   }
 }
 
