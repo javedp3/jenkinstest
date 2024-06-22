@@ -41,6 +41,15 @@ pipeline {
         sh 'mysql --version'
       }
     }
+stage('data platform for caching') {
+      agent {
+        docker { image 'redis:7.4-rc1-alpine3.20'  }
+      }
+      steps {
+        sh 'redis --version'
+      }
+    }
+
     
   }
 }
