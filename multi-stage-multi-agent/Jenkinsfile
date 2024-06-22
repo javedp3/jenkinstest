@@ -1,21 +1,42 @@
+// pipeline {
+//   agent none
+//   stages {
+//     stage('Back-end') {
+//       agent {
+//         docker { image 'maven:3.8.1-adoptopenjdk-11' }
+//       }
+//       steps {
+//         sh 'mvn --version'
+//       }
+//     }
+//     stage('Front-end') {
+//       agent {
+//         docker { image 'node:16-alpine' }
+//       }
+//       steps {
+//         sh 'node --version'
+//       }
+//     }
+//   }
+// }
+
+Jenkinsfile (Declarative Pipeline)
+/* Requires the Docker Pipeline plugin */
 pipeline {
-  agent none
-  stages {
-    stage('Back-end') {
-      agent {
-        docker { image 'maven:3.8.1-adoptopenjdk-11' }
-      }
-      steps {
-        sh 'mvn --version'
-      }
+    agent { docker { image 'php:8.3.8-alpine3.20' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'php --version'
+            }
+        }
     }
-    stage('Front-end') {
-      agent {
-        docker { image 'node:16-alpine' }
-      }
-      steps {
-        sh 'node --version'
-      }
+    agent { docker { image 'golang:1.22.4-alpine3.20' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'go version'
+            }
+        }
     }
-  }
 }
