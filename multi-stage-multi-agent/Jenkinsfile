@@ -14,7 +14,7 @@ pipeline {
         docker { image 'golang:1.23rc1-alpine3.20' }
       }
       steps {
-        sh 'go --version'
+        sh 'go:1.23rc1 --version'
       }
     }
   }
