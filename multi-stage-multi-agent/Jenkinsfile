@@ -17,5 +17,13 @@ pipeline {
         sh 'node --version'
       }
     }
+     stage('build') {
+      agent {
+        docker { image 'php:8.3.8-alpine3.20' }
+      }
+      steps {
+        sh 'php  --version'
+      }
+    }
   }
 }
