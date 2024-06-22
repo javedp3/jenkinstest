@@ -18,12 +18,11 @@ pipeline {
       }
     }
      stage('production') {
-      agent {
-        docker { image '7.0-rc-alpine3.15' }
-      }
-      steps {
-        sh 'circleci/redis --version'
-      }
-    }
+      agent { docker { image 'ruby:3.3.3-alpine3.20' } 
+            }
+         steps {
+                sh 'ruby --version'
+                }
+     }
   }
 }
