@@ -49,14 +49,7 @@ pipeline {
         sh 'redis --version'
       }
     }
-    stage('go imperative programming language') {
-      agent {
-        docker { image 'golang:1.23rc1-bullseye'  }
-      }
-      steps {
-        sh 'golang --version'
-      }
-    }
+    
 
     
   }
